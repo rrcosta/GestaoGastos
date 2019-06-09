@@ -4,8 +4,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['HB_DB_USER_DEV'] %>
-  password: <%= ENV['HB_DB_PWD_DEV'] %>
+  username: <%= ENV['GASTOS_DB_USER_DEV'] %>
+  password: <%= ENV['GASTOS_DB_PWD_DEV'] %>
 
 development:
   <<: *default
@@ -18,5 +18,5 @@ test:
 production:
   <<: *default
   database: gastos_production
-  username: <%= ENV['HB_DB_USER_PRD'] %>
-  password: <%= ENV['HB_DB_PWD_PRD'] %>
+  username: <%= ENV['GASTOS_DB_USER_PRD'] %>
+  password: <%= ENV['GASTOS_DB_PWD_PRD'] %>
