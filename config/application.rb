@@ -34,6 +34,9 @@ module Gastos
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Adds Lib folder for autoloads
+    config.autoload_paths << Rails.root.join('lib')
+
     # Generates UUID
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
