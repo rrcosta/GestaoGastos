@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context "Validations" do
-    let(:user) { create(:user) }
+    let(:user) { create(:user, :with_pwd) }
 
     it "is valid with name field" do
       expect(user).to be_valid
@@ -10,6 +10,7 @@ RSpec.describe User, type: :model do
 
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:username) }
+    it { is_expected.to validate_presence_of(:password) }
   end
 end
 
