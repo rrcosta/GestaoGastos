@@ -84,11 +84,13 @@ response
 
   Header
   
-  
-  | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-  | Authorization | eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ.kqZMHOmELv2Sl7rRw8MqBG5UOF1QfN7yPj4gpCFL26ss |
-  | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
  
+|               |                           |
+|---------------|---------------------------|
+| Authorization | eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
+|               |                           |
+ 
+
   Response:
  ```ruby 
   [
