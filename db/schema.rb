@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_003735) do
 
   create_table "expenses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "descricao"
-    t.decimal "valor", precision: 5, scale: 2
+    t.decimal "valor"
     t.datetime "data"
     t.uuid "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
