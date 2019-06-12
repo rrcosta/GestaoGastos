@@ -19,7 +19,7 @@ class ApplicationController < ActionController::API
 
     rescue JWT::DecodeError => e
       render json: { 
-                      errors: "Token nao informado OU invalido. Detalhe:: #{e.message}"
+                      errors: "Token não informado OU inválido. Detalhe:: #{e.message}"
                    }, status: :unauthorized
     end
   end
