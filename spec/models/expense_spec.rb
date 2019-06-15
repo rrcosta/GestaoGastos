@@ -10,5 +10,4 @@ RSpec.describe Expense, type: :model do
     it { is_expected.to validate_presence_of(:valor) }
     it { is_expected.to validate_presence_of(:data) }
   end
-
 end

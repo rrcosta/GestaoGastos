@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    @expenses = Expense.all
+    @expenses = @current_user.expense.all.ordered
 
     render json: @expenses
   end
@@ -39,10 +39,32 @@ class ExpensesController < ApplicationController
     @expense.destroy
   end
 
+  # GET
+  def filter_by_date
+    if params[:data].blank?
+      render json: {
+                     errors: "Parametro Data não informado ou inválido"
+                   }, status: :unprocessable_entity
+    else
+      begin
+        periodo = Date.parse(params[:data])
+
+        @expenses = @current_user.expense.filter_by_date(periodo).ordered
+
+        render json: @expenses
+
+      rescue ArgumentError => e
+        render json: {
+                      errors: "Parametro informado inválido. \n Detalhe:: #{e.message}"
+                     }, status: :unprocessable_entity
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expense
-      @expense = Expense.find(params[:id])
+      @expense = @current_user.expense.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
