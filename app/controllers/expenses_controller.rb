@@ -40,8 +40,25 @@ class ExpensesController < ApplicationController
   end
 
   # GET
-  def filter_by_date(period)
-    @expenses = @current_user.expense.filter_by_date(period).ordered
+  def filter_by_date
+    if params[:data].blank?
+      render json: {
+                     errors: "Parametro Data não informado ou inválido"
+                   }, status: :unprocessable_entity
+    else
+      begin
+        periodo = Date.parse(params[:data])
+
+        @expenses = @current_user.expense.filter_by_date(periodo).ordered
+
+        render json: @expenses
+
+      rescue ArgumentError => e
+        render json: {
+                      errors: "Parametro informado inválido. \n Detalhe:: #{e.message}"
+                     }, status: :unprocessable_entity
+      end
+    end
   end
 
   private
