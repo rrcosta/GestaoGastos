@@ -24,7 +24,7 @@ class ApplicationController < ActionController::API
                    }, status: :unauthorized
     rescue JWT::ExpiredSignature => e
       render json: {
-                     errors: "Token do usuário expirado!! Detalhe:: #{e.message}"
+                     errors: "Token expirado !. Detalhe:: #{e.message}"
                    }, status: :unauthorized
     end
   end
