@@ -1,3 +1,4 @@
+# coding: utf-8
 class ExpensesController < ApplicationController
   before_action :authorize_request
   before_action :set_expense, only: [:show, :update, :destroy]
@@ -17,6 +18,7 @@ class ExpensesController < ApplicationController
   # POST /expenses
   def create
     @expense = Expense.new(expense_params)
+    @expense.user_id = @current_user.id
 
     if @expense.save
       render json: @expense, status: :created, location: @expense
@@ -39,7 +41,7 @@ class ExpensesController < ApplicationController
     @expense.destroy
   end
 
-  # GET
+  # GET /gasto_por_dia?data=yyyy-mm-dd
   def filter_by_date
     if params[:data].blank?
       render json: {
