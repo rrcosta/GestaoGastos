@@ -1,3 +1,4 @@
+# coding: utf-8
 # ApplicationController
 class ApplicationController < ActionController::API
   def not_found
@@ -13,13 +14,17 @@ class ApplicationController < ActionController::API
       @current_user = User.find(@decoded[:user_id])
 
     rescue ActiveRecord::RecordNotFound => e
-      render json: { 
+      render json: {
                      errors: "Registro não encontrado. Detalhe:: #{e.message}"
                    }, status: :unauthorized
 
     rescue JWT::DecodeError => e
-      render json: { 
+      render json: {
                       errors: "Token não informado OU inválido. Detalhe:: #{e.message}"
+                   }, status: :unauthorized
+    rescue JWT::ExpiredSignature => e
+      render json: {
+                     errors: "Token do usuário expirado!! Detalhe:: #{e.message}"
                    }, status: :unauthorized
     end
   end
