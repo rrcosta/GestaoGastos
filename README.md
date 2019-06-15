@@ -44,7 +44,12 @@ Ele e formado por 3 secoes: Header, Payload e Signature.
 
 Para utilizar esta API é necessário fazer os seguintes passos:
 
-1. Criar um usuário, atraves do endpoint POST /users, exemplo:
+1. Criar um usuário, atraves do endpoint:
+
+```ruby
+    POST /users
+```
+
 ```ruby
    {
 	 "name": "teste",
@@ -69,7 +74,12 @@ response
 ```
 
 
-2. Autenticar na API, atraves do endpoint POST /auth/login, exemplo:
+2. Autenticar na API, atraves do endpoint:
+
+```ruby
+    POST /auth/login
+```
+
 ```ruby
   {
 	"username": "teste",
@@ -87,6 +97,12 @@ response
 
 ```
 3. Efetuar o Login na API com o cabeçalho - Authorization com o token.
+
+```ruby
+    GET /users/{username}
+    
+    GET /users/teste
+```
 
 header
   
@@ -113,7 +129,11 @@ OBS: Sempre sera necessario passar o token para acessar e manipular as informaco
 
 #### Gastos (expenses)
 
-O usuario poderar cadastrar seus gastos atraves do endpoint POST /expenses, conforme exemplo abaixo:
+O usuario poderar cadastrar seus gastos atraves do endpoint:
+
+```ruby
+    POST /expenses
+```
 
 header
   
@@ -132,7 +152,11 @@ body
   }
 ```
 
-Visualizar os gastos cadastrados User /expenses, conforme exemplo abaixo:
+Visualizar os gastos cadastrados pelo usuário logado na api:
+
+```ruby
+    GET /expenses
+```
 
 header
   
@@ -177,16 +201,18 @@ header
   A Api disponibiliza um endpoint de filtro para buscar os gasto de um determinado dia cadastrado pelo usuário logado na api.
   
   exemplo:
+  
+  ```ruby
+    GET /gasto_por_dia?data=2019-06-03
+  ```
+  Onde o data=2019-06-03 deverá ser a data desejada para fazer o filtro de gastos cadatrados através do usuário logado pelo Token.
+  
   header
 
     |---------------|-----------------------------------------------------------------------------------------------------------------------|
     | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
     |---------------|-----------------------------------------------------------------------------------------------------------------------|
 
-  ```ruby
-    GET /gasto_por_dia?data=2019-06-03
-  ```
-  Onde o data=2019-06-03 deverá ser a data desejada para fazer o filtro de gastos cadatrados através do usuário logado pelo Token.
 
   Response:
 
