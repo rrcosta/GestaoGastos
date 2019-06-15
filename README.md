@@ -146,11 +146,11 @@ body
   {
     "descricao": "teste",
     "valor": 1250.10,
-    "data": "2019-06-13",
-    "user_id": "dc0e72a0-33f3-40e1-aae8-66848b63f123"
-	 
+    "data": "2019-06-13"
   }
 ```
+
+OBS: O campo "codigousuario" informado no teste sera considerado como "user_id", que sera obtido ao salvar o registro de gasto (expense), atraves do token informado no client (Postman, SoapUI ou Curl ).
 
 Visualizar os gastos cadastrados pelo usuário logado na api:
 
