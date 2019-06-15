@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   def index
-    @expenses = Expense.all.ordered
+    @expenses = @current_user.expense.all.ordered
 
     render json: @expenses
   end
@@ -39,10 +39,15 @@ class ExpensesController < ApplicationController
     @expense.destroy
   end
 
+  # GET
+  def filter_by_date(period)
+    @expenses = @current_user.expense.filter_by_date(period).ordered
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expense
-      @expense = Expense.find(params[:id])
+      @expense = @current_user.expense.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
