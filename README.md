@@ -171,5 +171,23 @@ header
 ]
 ```
 
+### Filtro de Gastos por dia.
+
+  A Api disponibiliza um endpoint de filtro para buscar os gasto de um determinado dia cadastrado pelo usuário logado na api.
+  
+  exemplo:
+  header
+  
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
+    | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
+
+  ```ruby
+    GET /gasto_por_dia?data=2019-06-03
+  ```
+  Onde o data=2019-06-03 deverá ser a data desejada para fazer o filtro de gastos cadatrados através do usuário logado pelo Token.
+
+
+
 ..
 
