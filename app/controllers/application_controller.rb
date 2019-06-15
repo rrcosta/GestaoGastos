@@ -2,7 +2,7 @@
 # ApplicationController
 class ApplicationController < ActionController::API
   def not_found
-    render json: { error: 'not_found' }
+    render json: { error: 'Registro não encontrado' }
   end
 
   def authorize_request
@@ -22,6 +22,7 @@ class ApplicationController < ActionController::API
       render json: {
                       errors: "Token não informado OU inválido. Detalhe:: #{e.message}"
                    }, status: :unauthorized
+
     rescue JWT::ExpiredSignature => e
       render json: {
                      errors: "Token expirado !. Detalhe:: #{e.message}"
