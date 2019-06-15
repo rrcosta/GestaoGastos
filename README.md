@@ -88,12 +88,11 @@ response
 ```
 3. Efetuar o Login na API com o cabeçalho - Authorization com o token.
 
-  Header
-
-
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
-| Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
+header
+  
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
+    | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
 
 
   Response:
@@ -117,9 +116,10 @@ OBS: Sempre sera necessario passar o token para acessar e manipular as informaco
 O usuario poderar cadastrar seus gastos atraves do endpoint POST /expenses, conforme exemplo abaixo:
 
 header
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
-| Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
+  
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
+    | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
 
 body
 ```ruby
@@ -135,9 +135,10 @@ body
 Visualizar os gastos cadastrados User /expenses, conforme exemplo abaixo:
 
 header
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
-| Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
-|---------------|-----------------------------------------------------------------------------------------------------------------------|
+  
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
+    | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
+    |---------------|-----------------------------------------------------------------------------------------------------------------------|
 
 ```ruby
   [
@@ -177,7 +178,7 @@ header
   
   exemplo:
   header
-  
+
     |---------------|-----------------------------------------------------------------------------------------------------------------------|
     | Authorization |Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ |
     |---------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -187,7 +188,21 @@ header
   ```
   Onde o data=2019-06-03 deverá ser a data desejada para fazer o filtro de gastos cadatrados através do usuário logado pelo Token.
 
+  Response:
 
+  ```ruby
+  [
+    {
+        "id": "e30b2dab-05ce-4eb9-9502-fe747fc4be72",
+        "descricao": "Pagamento do condominio ",
+        "valor": "305.95",
+        "data": "2019-06-03T00:00:00.000Z",
+        "user_id": "dc0e72a0-33f3-40e1-aae8-66848b63f123",
+        "created_at": "2019-06-14T14:06:15.051Z",
+        "updated_at": "2019-06-14T14:06:15.051Z"
+    }
+  ]
+```
 
 ..
 
