@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post 'categoria',   to: 'categories#create'
   end
 
-  resources :categories, only: [:index]
+  resources :categories
 
   # filtro de data
   get 'gasto_por_dia', to: 'expenses#filter_by_date', param: :data
