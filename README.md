@@ -34,33 +34,31 @@ Para obter a versão 2.6.3 do Ruby, basta abrir um terminal em seu sistema e dig
 
 Para: Mac
 
-Para maiores detalhes vide: http://railsapps.github.io/installrubyonrails-mac.html
+  Para maiores detalhes vide: http://railsapps.github.io/installrubyonrails-mac.html
 
-```
- brew install ruby
-```
+  ```
+  brew install ruby
+  ```
 
-Para: Debian, Ubuntu e derivados
+  Para: Linux (Debian, Ubuntu e derivados)
 
-```
-sudo apt-get install ruby-full
-```
+  ```
+  sudo apt-get install ruby-full
+  ```
 
 Para: Windows
 
-Para instalar o Ruby no Windows, sugiro verificar os passos no seguinte site: https://rubyinstaller.org/downloads/ 
-
+  Para instalar o Ruby no Windows, sugiro verificar os passos no seguinte site: https://rubyinstaller.org/downloads/ 
 
 
 * Ruby on Rails
 
 Após instalar o ruby (passo acima), deverá instalar o framework Rails, através do comando abaixo
 
-```
-gem install rails --version=5.2.3
-```
-
-Obs: dependendo das configurações de sua maquina, este processo poderá demorar, mas não se preoucupe esse é o único passo que poderá demorar um pouco ;)
+  ```
+  gem install rails
+  ```
+  Obs: dependendo das configurações de sua maquina, este processo poderá demorar, mas não se preoucupe esse é o único passo que poderá demorar um pouco ;)
 
 * PostgreSQL
 
@@ -74,29 +72,40 @@ https://www.edivaldobrito.com.br/como-instalar-o-postgresql-9-4-no-ubuntu-e-cent
 1. Faça o clone deste projeto
 
 2. Vá ao diretório do projeto e execute
-```bash
-        $ bundle install
-```
+  ```bash
+          $ bundle install
+  ```
 
 3. Copie o conteúdo do arquivo .env.example para o arquivo .env e altere com as credenciais de seu ambiente local
-```bash
-        $ cp .env.example .env
-```
+  ```bash
+      $ cp .env.example .env
+  ```
 
 4. Abra o arquivo .env e coloque os seus dados de acesso do seu banco de dados Postgrsql
 
 5. Faça o setup do banco de dados: Criação do Banco de Dados
-```bash
-        $ bin/rails db:create
-```
+  ```bash
+      $ bin/rails db:create
+  ```
+
 6. Faça o setup do banco de dados: Criação das tabelas Banco de Dados
-```bash
-        $ bin/rails db:migrate
-```
+  ```bash
+      $ bin/rails db:migrate
+  ```
+
 7. Inicie a aplicação usando o servidor local (Irá iniciar na porta padrão que é a 3000)
-```bash
-        $ rails s
-```
+  ```bash
+      $ rails s
+  ```
+
+### Rodar os testes da aplicação
+
+Para rodar os testes automatizados deste projeto, basta entrar no pasta raiz do projeto e digitar:
+
+  ```bash
+      $ rspec
+  ```
+
 ### Autenticaçao da aplicação
 
 Para a autenticaçao foi utilizado o JWT, que e um padrao (RFC-7519) de mercado que define como transmitir e armazenar objetos JSON de forma segura.
@@ -127,46 +136,43 @@ Para utilizar esta API é necessário fazer os seguintes passos:
 
 response
 
-```ruby
-  {
-    "id": "dc0e72a0-33f3-40e1-aae8-66848b63f123",
-    "name": "teste",
-    "username": "teste",
-    "password_digest": "$2a$10$CIYnpAox9X/ERyGSzJ0Ster/mD0JQKMx/yfjZtYgE7gwzyeKtIiwC"
-  }
-
-```
-
+  ```ruby
+    {
+      "id": "dc0e72a0-33f3-40e1-aae8-66848b63f123",
+      "name": "teste",
+      "username": "teste",
+      "password_digest": "$2a$10$CIYnpAox9X/ERyGSzJ0Ster/mD0JQKMx/yfjZtYgE7gwzyeKtIiwC"
+    }
+  ```
 
 2. Autenticar na API, atraves do endpoint:
 
-```ruby
+  ```ruby
     POST /auth/login
-```
+  ```
 
-```ruby
-  {
-	"username": "teste",
-	"password": "123456"
-  }
-```
+  ```ruby
+    {
+    "username": "teste",
+    "password": "123456"
+    }
+  ```
   response:
 
-```ruby
-  {
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ.kqZMHOmELv2Sl7rRw8MqBG5UOF1QfN7yPj4gpCFL26s",
-    "exp": "10-06-2019 21:01",
-    "username": "teste"
-  }
-
-```
+  ```ruby
+    {
+      "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGMwZTcyYTAtMzNmMy00MGUxLWFhZTgtNjY4NDhiNjNmMTIzIiwiZXhwIjoxNTYwMjExMjc1fQ",
+      "exp": "10-06-2019 21:01",
+      "username": "teste"
+    }
+  ```
 3. Efetuar o Login na API com o cabeçalho - Authorization com o token.
 
-```ruby
+  ```ruby
     GET /users/{username}
     
     GET /users/teste
-```
+  ```
 
 header
   
@@ -176,16 +182,16 @@ header
 
 
   Response:
- ```ruby
-  [
-    {
-        "id": "dc0e72a0-33f3-40e1-aae8-66848b63f123",
-        "name": "teste",
-        "username": "teste",
-        "password_digest": "$2a$10$CIYnpAox9X/ERyGSzJ0Ster/mD0JQKMx/yfjZtYgE7gwzyeKtIiwC"
-    }
-  ]
-```
+  ```ruby
+    [
+      {
+          "id": "dc0e72a0-33f3-40e1-aae8-66848b63f123",
+          "name": "teste",
+          "username": "teste",
+          "password_digest": "$2a$10$CIYnpAox9X/ERyGSzJ0Ster/mD0JQKMx/yfjZtYgE7gwzyeKtIiwC"
+      }
+    ]
+  ```
 
 OBS: Sempre sera necessario passar o token para acessar e manipular as informacoes na API.
 
