@@ -16,6 +16,10 @@ class CategoriesController < ApplicationController
   # POST /categories
   def create
     @category = Category.new(category_params)
+    
+    unless params[:expense_id].blank?
+      @category.expense_id = params[:expense_id]
+    end
 
     if @category.save
       render json: @category, status: :created, location: @category
@@ -46,6 +50,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:descricao)
+      params.require(:category).permit(:descricao, :expense_id)
     end
 end
