@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   context "Validations" do
-    let(:category) { create(:category) }
 
-    it "is valid with name field" do
-      expect(category).to be_valid
+    context "Associations" do
+      it { is_expected.to belong_to :expense }
     end
 
     it { is_expected.to validate_presence_of(:descricao) }
