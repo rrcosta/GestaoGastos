@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  context "Associations" do
+    it { is_expected.to have_many :expense }    
+  end
+
   context "Validations" do
     let(:user) { create(:user, :with_pwd) }
 
