@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  
   resources :expenses do
     get  'categoria',   to: 'categories#index'
     post 'categoria',   to: 'categories#create'
@@ -7,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index]
 
-  resources :users, params: :_username
-
   # filtro de data
   get 'gasto_por_dia', to: 'expenses#filter_by_date', param: :data
+  
+  resources :users, params: :_username
 
   post '/auth/login', to: 'authentication#login'
   get '/*a', to: 'application#not_found'  
