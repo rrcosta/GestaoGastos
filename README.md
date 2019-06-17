@@ -9,7 +9,7 @@ Na implementaçao deste projeto foi utilizado o seguinte stack tecnologico: Git,
 ## Ambiente de desenvolvimento
 
 ### Pre Requirements
-* Linux / Mac OSX
+* Windows / Linux / Mac OSX
 * [Git](https://git-scm.com)
 * [Ruby 2.6.3](https://www.ruby-lang.org)
 * [Rails 6.0.0.rc1](https://www.ruby-lang.org)
@@ -26,13 +26,14 @@ Vide estes tutoriais para instalação:
   https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/
 
 
-Após a instalação do git, deverá configura-lo (https://git-scm.com/book/pt-br/v2/Começando-Configuração-Inicial-do-Git) e dar clonar (https://git-scm.com/book/pt-br/v2/Git-Basics-Getting-a-Git-Repository) o seguinte repositório: (git@github.com:rrcosta/api-intelipost.git), após clona-lo deverá seguinte os passos abaixo
+Após a instalação do git, deverá configura-lo (https://git-scm.com/book/pt-br/v2/Começando-Configuração-Inicial-do-Git) e dar clonar este (https://git-scm.com/book/pt-br/v2/Git-Basics-Getting-a-Git-Repository) repositório.
+Após clona-lo deverá seguinte os passos abaixo
 
 * Ruby
 
 Para obter a versão 2.6.3 do Ruby, basta abrir um terminal em seu sistema e digitar um dos seguintes comandos:
 
-Para: Mac
+Para:
 
   Para maiores detalhes vide: http://railsapps.github.io/installrubyonrails-mac.html
 
@@ -46,7 +47,7 @@ Para: Mac
   sudo apt-get install ruby-full
   ```
 
-Para: Windows
+  Para: Windows
 
   Para instalar o Ruby no Windows, sugiro verificar os passos no seguinte site: https://rubyinstaller.org/downloads/ 
 
