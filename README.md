@@ -19,38 +19,32 @@ Na implementaçao deste projeto foi utilizado o seguinte stack tecnologico: Git,
 
 * Git
 
-O primeiro passo que deverá efetuar será instalar o Git (https://git-scm.com), caso ainda não o tenha.
-Vide estes tutoriais para instalação:
+O primeiro passo que deverá efetuar será instalar o Git (https://git-scm.com).
+Caso ainda não o tenha, vide o tutorial abaixo para instalação:
 
   https://git-scm.com/book/pt-br/v1/Primeiros-passos-Instalando-Git
-  https://www.liquidweb.com/kb/install-git-ubuntu-16-04-lts/
 
-
-Após a instalação do git, deverá configura-lo (https://git-scm.com/book/pt-br/v2/Começando-Configuração-Inicial-do-Git) e dar clonar este (https://git-scm.com/book/pt-br/v2/Git-Basics-Getting-a-Git-Repository) repositório.
-Após clona-lo deverá seguinte os passos abaixo
+Após a instalação do git, deverá configura-lo (https://git-scm.com/book/pt-br/v2/Começando-Configuração-Inicial-do-Git) e clonar este projeto (git@github.com:rrcosta/GestaoGastos.git).
 
 * Ruby
 
 Para obter a versão 2.6.3 do Ruby, basta abrir um terminal em seu sistema e digitar um dos seguintes comandos:
 
-Para:
+  * Windows
 
-  Para maiores detalhes vide: http://railsapps.github.io/installrubyonrails-mac.html
+  Para instalar o Ruby no Windows, sugiro verificar os passos no seguinte site: https://rubyinstaller.org/downloads/ 
 
+  * Mac
+ 
   ```
   brew install ruby
   ```
 
-  Para: Linux (Debian, Ubuntu e derivados)
+  * Linux (Debian, Ubuntu e derivados)
 
   ```
   sudo apt-get install ruby-full
   ```
-
-  Para: Windows
-
-  Para instalar o Ruby no Windows, sugiro verificar os passos no seguinte site: https://rubyinstaller.org/downloads/ 
-
 
 * Ruby on Rails
 
@@ -59,14 +53,6 @@ Após instalar o ruby (passo acima), deverá instalar o framework Rails, atravé
   ```
   gem install rails
   ```
-  Obs: dependendo das configurações de sua maquina, este processo poderá demorar, mas não se preoucupe esse é o único passo que poderá demorar um pouco ;)
-
-* PostgreSQL
-
-Para instalação do Postgresql, entre neste tutorial e mande brasa na instação de um dos melhores BD gratuidos para se trabalhar!
-
-https://www.edivaldobrito.com.br/como-instalar-o-postgresql-9-4-no-ubuntu-e-centos/
-
 
 ### Instalação e execução da aplicação
 
