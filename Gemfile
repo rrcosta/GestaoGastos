@@ -5,7 +5,7 @@ ruby '2.7.0'
 
 gem 'rails', '~> 6.0.0'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootsnap', '>= 1.4.2', require: false
 # Use Json Web Token (JWT) for token based authentication
